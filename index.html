@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>De: Piassi ;)</title>
+    <style>
+        .tela1 {
+            display: block;
+        }
+
+        .tela2 {
+            display: none;
+        }
+
+        .botao {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .botao.mover {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script>
+        function alternarTelas() {
+            var tela1 = document.getElementById("tela1");
+            var tela2 = document.getElementById("tela2");
+
+            if (tela1.style.display === "block") {
+                tela1.style.display = "none";
+                tela2.style.display = "block";
+            } else {
+                tela1.style.display = "block";
+                tela2.style.display = "none";
+            }
+        }
+
+        function moverBotao() {
+            var botao = document.getElementById("botao2");
+            botao.classList.toggle("mover");
+        }
+    </script>
+</head>
+
+<body style="background-color:darksalmon" class="w3-container">
+    <div id="tela1" class="tela1 w3-center">
+        <h1 class="w3-border w3-text-white">Topa sair comigo no sábado?!?</h1>
+        <button class="botao w3-blue" onclick="alternarTelas()">Sim</button>
+        <button id="botao2" class="botao w3-red" onclick="moverBotao()">Não</button>
+    </div>
+
+    <div style="background-color:darksalmon" id="tela2" class="tela2 w3-center" >
+        <h1 class="w3-border w3-text-white">Ebaaaaaaaa <br>
+            Deixo você escolher o lugar!</h1>
+            <img src="gato.jpeg" height="500px" width="500px"> <br>
+            <button class="botao" onclick="alternarTelas()">Voltar</button>
+    </div>
+</body>
+
+</html>
